@@ -6,7 +6,7 @@ import axios from "axios";
 const getData = async () => {
   const res = await axios.get("https://jsonplaceholder.typicode.com/users");
   const data = res.data;
-  // console.log(JSON.stringify(data[0].name));
+  console.log(JSON.stringify(data[0].name));
   return JSON.stringify(data);
 };
 
@@ -30,7 +30,7 @@ function App() {
           <button type="submit">JOIN</button>
         </form>
       </header>
-      <div></div>
+      <div>{user}</div>
     </div>
   );
 }
