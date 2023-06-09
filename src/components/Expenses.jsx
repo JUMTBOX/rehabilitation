@@ -7,12 +7,14 @@ export default function Expenses({ expenses }) {
     <div className="expenses">
       {expenses.map((item, index) => {
         return (
-          <ExpenseItem
-            key={index}
-            title={item.title}
-            amount={item.amount}
-            date={item.date}
-          />
+          <Card>
+            <ExpenseItem
+              key={index}
+              title={item.title}
+              amount={item.amount}
+              date={item.date}
+            />
+          </Card>
         );
       })}
     </div>
