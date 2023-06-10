@@ -1,12 +1,14 @@
 import React, { useState, useRef } from "react";
+import "./NewExpenses.css";
+import ExpenseForm from "./ExpenseForm";
 
 const NewExpense = () => {
   const inputRef = useRef();
 
   return (
-    <>
-      <input type="text" ref={inputRef} />
-    </>
+    <div className="new-expense">
+      <ExpenseForm />
+    </div>
   );
 };
 
