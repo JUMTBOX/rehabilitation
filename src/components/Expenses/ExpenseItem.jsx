@@ -1,10 +1,15 @@
+import { useState, useRef } from "react";
 import ExpenseDate from "./ExpenseDate";
 import Card from "../UI/Card";
 import "./ExpenseItem.css";
-import { useState } from "react";
 
 const ExpenseItem = (props) => {
   const [title, setTitle] = useState(props.title);
+  const inputRef = useRef();
+
+  const clickHandler = () => {
+    setTitle((cur) => inputRef.current.value);
+  };
 
   return (
     <Card className="expense-item">
@@ -13,13 +18,8 @@ const ExpenseItem = (props) => {
         <h2>{title}</h2>
         <div className="expense-item__price">{props.amount}</div>
       </div>
-      <button
-        onClick={() => {
-          setTitle((cur) => "타이틀 바꾸기");
-        }}
-      >
-        Change Title
-      </button>
+      <input type="text" ref={inputRef} />
+      <button onClick={clickHandler}>Change Title</button>
     </Card>
   );
 };
