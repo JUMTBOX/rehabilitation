@@ -5,10 +5,9 @@ import "./ExpenseItem.css";
 
 const ExpenseItem = (props) => {
   const [title, setTitle] = useState(props.title);
-  const inputRef = useRef();
 
   const clickHandler = () => {
-    setTitle((cur) => inputRef.current.value);
+    setTitle((cur) => "updated!");
   };
 
   return (
@@ -18,7 +17,6 @@ const ExpenseItem = (props) => {
         <h2>{title}</h2>
         <div className="expense-item__price">{props.amount}</div>
       </div>
-      <input type="text" ref={inputRef} />
       <button onClick={clickHandler}>Change Title</button>
     </Card>
   );
