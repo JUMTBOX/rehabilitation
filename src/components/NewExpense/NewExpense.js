@@ -2,13 +2,16 @@ import React from "react";
 import "./NewExpenses.css";
 import ExpenseForm from "./ExpenseForm";
 
-const NewExpense = () => {
+const NewExpense = ({ onAddexpense }) => {
   const onSaveExpenseDataHandler = (enteredExpenseData) => {
     const expenseData = {
       ...enteredExpenseData,
       id: Math.floor(Math.random() * 10000).toString(),
     };
-    console.log(expenseData);
+
+    onAddexpense(expenseData);
+
+    console.log("In NewExpense.js", expenseData);
   };
 
   return (
