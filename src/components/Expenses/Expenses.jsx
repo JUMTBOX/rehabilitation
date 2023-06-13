@@ -1,10 +1,12 @@
 import ExpenseItem from "./ExpenseItem";
+import ExpensesFilter from "./ExpensesFilter";
 import Card from "../UI/Card";
 import "./Expenses.css";
 
 const Expenses = ({ expenses }) => {
   return (
     <div className="expenses">
+      <ExpensesFilter />
       {expenses.map((item, index) => {
         return (
           <Card>
