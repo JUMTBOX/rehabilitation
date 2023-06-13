@@ -6,7 +6,7 @@ const NewExpense = () => {
   const onSaveExpenseDataHandler = (enteredExpenseData) => {
     const expenseData = {
       ...enteredExpenseData,
-      id: Math.random().toString(),
+      id: Math.floor(Math.random() * 10000).toString(),
     };
     console.log(expenseData);
   };
