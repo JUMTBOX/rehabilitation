@@ -5,20 +5,20 @@ import "./Expenses.css";
 
 const Expenses = ({ expenses }) => {
   return (
-    <div className="expenses">
+    <div>
       <ExpensesFilter />
-      {expenses.map((item, index) => {
-        return (
-          <Card>
+      <Card className="expenses">
+        {expenses.map((item, index) => {
+          return (
             <ExpenseItem
               key={index}
               title={item.title}
               amount={item.amount}
               date={item.date}
             />
-          </Card>
-        );
-      })}
+          );
+        })}
+      </Card>
     </div>
   );
 };
