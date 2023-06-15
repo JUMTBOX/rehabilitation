@@ -5,13 +5,13 @@ import "./Expenses.css";
 
 const Expenses = ({ expenses }) => {
   const filterChangeHandler = (selectedYear) => {
-    console.log("Expenses.js", selectedYear);
+    console.log("In Expenses.js", selectedYear);
     console.log("김세운 바보");
   };
 
   return (
     <div>
-      <ExpensesFilter onChangedYear={filterChangeHandler} />
+      <ExpensesFilter onChangedFilter={filterChangeHandler} />
       <Card className="expenses">
         {expenses.map((item, index) => {
           return (

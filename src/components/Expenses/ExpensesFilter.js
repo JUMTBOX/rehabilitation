@@ -1,11 +1,11 @@
 import React from "react";
 import "./ExpensesFilter.css";
 
-const ExpensesFilter = ({ onChangedYear }) => {
+const ExpensesFilter = ({ onChangedFilter }) => {
   const dropdownChangehandler = (e) => {
     console.log(e.target.value);
 
-    onChangedYear(e.target.value);
+    onChangedFilter(e.target.value);
   };
 
   return (
