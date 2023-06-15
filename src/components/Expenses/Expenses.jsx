@@ -4,6 +4,10 @@ import Card from "../UI/Card";
 import "./Expenses.css";
 
 const Expenses = ({ expenses }) => {
+  const filterChangeHandler = (selectedYear) => {
+    //
+  };
+
   return (
     <div>
       <ExpensesFilter />
