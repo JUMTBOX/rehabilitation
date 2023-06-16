@@ -31,10 +31,15 @@ const App = () => {
   const addExpenseHandler = (expense) => {
     setExpenses((cur) => [expense, ...cur]);
   };
+
+  const getDelItem = (e) => {
+    console.log("In App.js", e);
+  };
+
   return (
     <div className="app">
       <NewExpense onAddexpense={addExpenseHandler} />
-      <Expenses expenses={expenses} />
+      <Expenses expenses={expenses} getDelItem={getDelItem} />
     </div>
   );
 };

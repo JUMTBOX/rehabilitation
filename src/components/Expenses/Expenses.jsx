@@ -4,11 +4,15 @@ import ExpensesFilter from "./ExpensesFilter";
 import Card from "../UI/Card";
 import "./Expenses.css";
 
-const Expenses = ({ expenses }) => {
+const Expenses = ({ expenses, getDelItem }) => {
   const [filterYear, setFilterYear] = useState("2020");
 
   const filterChangeHandler = (selectedYear) => {
     setFilterYear((cur) => selectedYear);
+  };
+
+  const deleteHandler = (e) => {
+    getDelItem(e);
   };
 
   return (
@@ -18,13 +22,14 @@ const Expenses = ({ expenses }) => {
         onChangedFilter={filterChangeHandler}
       />
       <Card className="expenses">
-        {expenses.map((item, index) => {
+        {expenses.map((item) => {
           return (
             <ExpenseItem
-              key={index}
+              key={item.id}
               title={item.title}
               amount={item.amount}
               date={item.date}
+              delete={deleteHandler}
             />
           );
         })}

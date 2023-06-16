@@ -4,11 +4,9 @@ import Card from "../UI/Card";
 import "./ExpenseItem.css";
 
 const ExpenseItem = (props) => {
-  // const [title, setTitle] = useState(props.title);
-
-  // const clickHandler = () => {
-  //   setTitle((cur) => "updated!");
-  // };
+  const dataDeletion = () => {
+    props.delete(props.title);
+  };
 
   return (
     <Card className="expense-item">
@@ -17,8 +15,7 @@ const ExpenseItem = (props) => {
         <h2>{props.title}</h2>
         <div className="expense-item__price">{props.amount}</div>
       </div>
-      <button>Change Title</button>
-      {/* onClick={clickHandler} */}
+      <button onClick={dataDeletion}>삭제</button>
     </Card>
   );
 };
