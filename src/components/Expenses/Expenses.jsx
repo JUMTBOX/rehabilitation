@@ -13,7 +13,10 @@ const Expenses = ({ expenses }) => {
 
   return (
     <div>
-      <ExpensesFilter onChangedFilter={filterChangeHandler} />
+      <ExpensesFilter
+        selected={filterYear}
+        onChangedFilter={filterChangeHandler}
+      />
       <Card className="expenses">
         {expenses.map((item, index) => {
           return (

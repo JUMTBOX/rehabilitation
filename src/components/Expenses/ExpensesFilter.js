@@ -1,7 +1,7 @@
 import React from "react";
 import "./ExpensesFilter.css";
 
-const ExpensesFilter = ({ onChangedFilter }) => {
+const ExpensesFilter = ({ onChangedFilter, selected }) => {
   const dropdownChangehandler = (e) => {
     console.log(e.target.value);
 
@@ -12,7 +12,7 @@ const ExpensesFilter = ({ onChangedFilter }) => {
     <div className="expenses-filter">
       <div className="expenses-filter__control">
         <label>Filter by year</label>
-        <select onChange={dropdownChangehandler}>
+        <select value={selected} onChange={dropdownChangehandler}>
           <option value="2022">2022</option>
           <option value="2021">2021</option>
           <option value="2020">2020</option>
