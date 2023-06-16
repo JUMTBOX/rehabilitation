@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ExpenseItem from "./ExpenseItem";
 import ExpensesFilter from "./ExpensesFilter";
 import Card from "../UI/Card";
@@ -6,6 +6,10 @@ import "./Expenses.css";
 
 const Expenses = ({ expenses, getDelItem }) => {
   const [filterYear, setFilterYear] = useState("2020");
+
+  const filteredExpenses = expenses.filter(
+    (el) => el.date.getFullYear() === filterYear
+  );
 
   const filterChangeHandler = (selectedYear) => {
     setFilterYear((cur) => selectedYear);
