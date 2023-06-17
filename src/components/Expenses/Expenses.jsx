@@ -15,8 +15,8 @@ const Expenses = ({ expenses, getDelItem }) => {
     setFilterYear((cur) => selectedYear);
   };
 
-  const deleteHandler = (e) => {
-    getDelItem(e);
+  const deleteHandler = (event) => {
+    getDelItem(event);
   };
 
   return (
