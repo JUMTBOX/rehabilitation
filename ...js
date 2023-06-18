@@ -1,6 +1,7 @@
 // import axios from "axios";
 
-// async function loginRequest() {
+// async function loginRequest(e) {
+//   e.preventDefault();
 //   try {
 //     const loginData = await axios.post("http://localhost:3000/users/login", {
 //       id: ${userId},
@@ -10,4 +11,16 @@
 //   } catch (err) {
 //     console.error(err, "problem with login request!!");
 //   }
+// }
+
+// const resumeCreate = async():void => {
+//     try {
+//         const resumeData = await axios.post(`${SERVER_URL}`, {
+//             //이력서 제목
+//             //이력서 내용
+//             //포트폴리오??
+//         })
+//     } catch (err) {
+//         console.error(err, "resume creation failed")
+//     }
 // }
