@@ -19,7 +19,8 @@
 //             //이력서 제목
 //             //이력서 내용
 //             //포트폴리오??
-//         })
+//         });
+//         resumeData.status === 200 ? window.alert("creation success!") : window.alert("creation failed!")
 //     } catch (err) {
 //         console.error(err, "resume creation failed")
 //     }
